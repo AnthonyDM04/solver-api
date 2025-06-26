@@ -3,5 +3,5 @@ services:
     name: poker-evaluator
     env: python
     plan: free
-    buildCommand: ./build_ps_eval.sh
-    startCommand: gunicorn app:app
+    buildCommand: cd solver-api && ./build_ps_eval.sh
+    startCommand: cd solver-api && gunicorn app:app
