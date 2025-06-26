@@ -1,0 +1,18 @@
+[build-system]
+requires = ["scikit-build-core", "swig"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pokerstove"
+version = "1.2"
+
+[tool.scikit-build]
+build-dir = "_build/{wheel_tag}"
+wheel.packages = []
+cmake.version = ">=3.15"
+build.targets = ["pokerstove"]
+install.components = ["python"]
+sdist.exclude = ["src/programs", "android", "win32", "src/ext", "doc", ".*"]
+[tool.scikit-build.cmake.define]
+BUILD_WHEEL = "ON"
+
