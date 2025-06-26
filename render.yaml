@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: poker-evaluator
+    env: python
+    plan: free
+    buildCommand: ./build_ps_eval.sh
+    startCommand: gunicorn app:app
