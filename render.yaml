@@ -1,9 +1,8 @@
-# Force rebuild
 services:
   - type: web
     name: poker-evaluator
     env: python
     plan: free
-    buildCommand: ./build_ps_eval.sh
+    buildCommand: ./build_ps_eval.sh && pip install -r requirements.txt
     startCommand: gunicorn app:app
 
